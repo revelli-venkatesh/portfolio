@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>To-Do | My Web Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="main.css"/>
+  <link rel="stylesheet" href="todo.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">MyHub</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="todo.html">To-Do</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button id="theme-toggle" class="icon-btn">🌙</button>
+    <button class="nav-toggle icon-btn">☰</button>
+  </header>
+
+  <main class="container" data-aos="fade-up">
+    <h1>My To-Do List</h1>
+    <form id="task-form" class="task-form" data-aos="fade-up" data-aos-delay="100">
+      <input id="task-input" type="text" placeholder="New task..." required/>
+      <select id="priority-select">
+        <option value="low">Low Priority</option>
+        <option value="medium">Medium Priority</option>
+        <option value="high">High Priority</option>
+      </select>
+      <button type="submit" class="btn-primary">Add</button>
+    </form>
+    <ul id="task-list" class="task-list" data-aos="fade-up" data-aos-delay="200"></ul>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 My Web Hub</p>
+    <button id="back-to-top" class="icon-btn">↑</button>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="main.js"></script>
+  <script src="todo.js"></script>
+  <script>AOS.init({ once: true });</script>
+</body>
+</html>
