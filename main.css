@@ -1,0 +1,78 @@
+/* Base & Theme */
+:root {
+  --bg: #f4f7fa;
+  --text: #333;
+  --primary: #2575fc;
+  --secondary: #ff6347;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+body.dark {
+  --bg: #1e1e2f;
+  --text: #e0e0e0;
+  --primary: #3399ff;
+  --secondary: #ff8266;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2rem; background: var(--primary); color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.nav-links a {
+  margin: 0 1rem; text-decoration: none; color: #fff; font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--secondary); }
+.icon-btn {
+  background: none; border: none; font-size: 1.2rem; color: #fff; cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  text-align: center; padding: 4rem 1rem; background: #fff;
+}
+.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.1rem; margin-bottom: 2rem; }
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+  display: inline-block; padding: 0.75rem 1.5rem; border-radius: 5px;
+  text-decoration: none; font-weight: 500; transition: background 0.2s;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--secondary); }
+.btn-secondary { background: #fff; color: var(--primary); border: 2px solid var(--primary); }
+.btn-secondary:hover { background: var(--primary); color: #fff; }
+
+/* Cards & Layout */
+.container { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+.cards { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+.card {
+  background: #fff; padding: 2rem; border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 280px;
+  text-align: center; transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-5px); }
+
+/* Footer & Back‐to‐Top */
+.footer { text-align: center; padding: 1rem; background: #222; color: #fff; position: relative; }
+#back-to-top {
+  position: absolute; right: 1rem; bottom: 1rem; background: var(--secondary);
+  border: none; padding: 0.5rem; border-radius: 50%; color: #fff; cursor: pointer;
+}
+
+/* Responsive Nav */
+.nav-toggle { display: none; }
+@media (max-width: 768px) {
+  .nav-links { display: none; flex-direction: column; background: var(--primary); position: absolute; top: 100%; right: 0; width: 200px; }
+  .nav-links.show { display: flex; }
+  .nav-toggle { display: block; }
+}
